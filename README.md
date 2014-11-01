@@ -1,69 +1,30 @@
-# a tiny node.js webserver
+# not-so-tiny-node.js-webserver
 
 ## What is it?
 
-The tiny node.js webserver (hereafter, "tnws") is just that, a simple webserver implemented as a single, stand-alone CoffeeScript (or JavaScript) file.
+not-so-tiny-node.js-webserver is a simple webserver that's been expanded to be a slightly larger and more comprehensive web server than the [tiny-node.js-webserver](https://github.com/rodw/tiny-node.js-webserver) by Ron Waldhoff.
 
-By design, the tnws has **no external dependencies** outside of the core node.js libaries (and CoffeeScript, unless you're working with the "compiled" JS file).
-
-There are [many other](https://github.com/joyent/node/wiki/modules#wiki-web-frameworks-static) simple node.js applications for serving static files over HTTP, however the tnws is the only one I know of meets the "all-in-one-file" criterion.
-
-## Why is it?
-
-Sometimes you just need a little webserver.  
-
-Specifically, web browsers often treat resources served from local `file://` URLs slightly differently those served via `http://` URLs.  The tnws offers a quick-and-dirty way to serve local files over HTTP, which can come in handy when developing web applications based on local HTTP/JS/CSS files, etc.
+It requires the querystring library to be installed for use, which you can install by typing `npm install querystring`
 
 ## How do I use it?
 
-Just fetch the `tnws.coffee` file:
+This webserver is configurable to work with multiple projects in your environment.
 
-    curl -O https://raw.github.com/rodw/tiny-node.js-webserver/master/tnws.coffee
+To serve a single file, all you need to do is put that file into the same directory as the web server(`ntws.js`)
 
-(or otherwise download the file at [this url](https://raw.github.com/rodw/tiny-node.js-webserver/master/tnws.coffee)).
+Start the server by typing `node ntws.js`
 
-And run it:
+To use the server for multiple projects, you can configure the server by modifying `projects.json`.
 
-    coffee tnws.coffee
+### Configuration
 
-or simply:
+The not-so-tiny-node.js-web-server is configurable per-project, by modifying the` projects.json` file that's included with the web server and passing the project name as a command-line argument after the web server.
 
-    ./tnws.coffee
+For example, I can specify my project like this:
+    node ntws.js projectname
 
-That's all.  The tnws should now be listening at port 8080 on your localhost.  For example, you can fetch the `twns.coffee` source code itself by visiting <http://localhost:8080/tnws.coffee>.
+Custom pages can also be served for status codes other than 200 by placing a file with the appropriate name(`<status_code>.html`) in the `status_pages` directory.
 
-### Installing TNWS in Your Path
+## Licensing
 
-If you use the tiny node.js webserver often, you may want to install it somewhere in your `$PATH`.
-
-For instance, if the directory `~/bin` exists and is in your path, then you can save `tnws.coffee` into that directory:
-
-    curl -o "~/bin/tnws" https://raw.github.com/rodw/tiny-node.js-webserver/master/tnws.coffee
-
-and thereafter, launch a web server instance serving files from the current directory with just `tnws`.
-
-### Options
-
-The tnws can be configured through a few simple command-line arguments.
-
-In full:
-
-    tnws --port <port> --host <host> --docroot <docroot> \
-         --index <filename> --mime-type <ext> <value> \
-         --quiet --silent
-
-where:
-
- * `--host` or `-h` specifies the hostname to bind to (defaults to `127.0.0.1`).
- * `--port` or `-p` specifies the port to listen on (defaults to `8080`).
- * `--docroot` or `-d` specifies the directory from which to serve files (defaults to `.`).
- * `--index` or `-i` specifies the file to serve when a directory is requested (defaults to `index.html`).
- * `--mime-type` or `-m` specifies that files with the extension `<ext>` should be served with the MIME type `<value>`. Note that you can repeat the `--mime-type` flag to specify multiple mappings.
- * `--quiet` or `-q` supresses the `<STATUS-CODE> <REQUEST-METHOD> <REQUEST-URI>` log messages that tnws otherwise generates for every request serviced.
- * `--silent` or `-s` supresses all non-error console messages. (Note that `--silent` implies `--quiet`.)
-
-These arguments are all optional.
-
-## Licensing 
-
-The tnws is distributed under the [MIT License](http://www.opensource.org/licenses/mit-license.php), as specified in [`LICENSE.txt`](https://raw.github.com/rodw/tiny-node.js-webserver/master/LICENSE.txt) and in the [`tnws.coffee`](https://raw.github.com/rodw/tiny-node.js-webserver/master/tnws.coffee) file itself.
+This program is distributed under the [MIT License](http://www.opensource.org/licenses/mit-license.php), as specified in [`LICENSE.txt`](https://raw.github.com/abejfehr/not-so-tiny-node.js-webserver/master/LICENSE.txt) and in the [`ntws.js`](https://raw.github.com/abejfehr/not-so-tiny-node.js-webserver/master/ntws.js) file itself.

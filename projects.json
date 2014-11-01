@@ -1,0 +1,7 @@
+{
+  "parity": {
+    "host": "localhost",
+    "port": 5000,
+    "docroot": "/Users/abe/Dropbox/Projects/parity"
+  }
+}
