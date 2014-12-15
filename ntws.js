@@ -43,7 +43,6 @@
 var path = require('path');
 var http = require('http');
 var fs = require('fs');
-var jade = require('jade');
 var qs = require('querystring');
 
 // Setup MIME support
