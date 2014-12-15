@@ -4,17 +4,22 @@
 
 not-so-tiny-node.js-webserver is a simple webserver that's been expanded to be a slightly larger and more comprehensive web server than the [tiny-node.js-webserver](https://github.com/rodw/tiny-node.js-webserver) by Ron Waldhoff.
 
-It requires the querystring library to be installed for use, which you can install by typing `npm install querystring`
+It requires the fs and querystring libraries to be installed for use, which you can install by typing the following:
+
+    npm install -g fs
+    npm install -g querystring
 
 ## How do I use it?
 
 This webserver is configurable to work with multiple projects in your environment.
 
-To serve a single file, all you need to do is put that file into the same directory as the web server(`ntws.js`)
-
-Start the server by typing `node ntws.js`
+To serve a single file, all you need to do is put the `projects.json` file into the same directory as the web server(`ntws.js`)
 
 To use the server for multiple projects, you can configure the server by modifying `projects.json`.
+
+For the best results, add the directory containing `ntws.js` to the PATH environment variable of your system. Once you've done that, all you need to do to start the server is type the following:
+
+    serve <projectname>
 
 ### Configuration
 
