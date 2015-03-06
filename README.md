@@ -4,11 +4,6 @@
 
 not-so-tiny-node.js-webserver is a simple webserver that's been expanded to be a slightly larger and more comprehensive web server than the [tiny-node.js-webserver](https://github.com/rodw/tiny-node.js-webserver) by Ron Waldhoff.
 
-It requires the fs and querystring libraries to be installed for use, which you can install by typing the following:
-
-    npm install -g fs
-    npm install -g querystring
-
 ## How do I use it?
 
 This webserver is configurable to work with multiple projects in your environment.
