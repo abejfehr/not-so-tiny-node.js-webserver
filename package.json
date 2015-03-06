@@ -1,0 +1,19 @@
+{
+  "name": "not-so-tiny-web-server",
+  "version": "0.1.0",
+  "description": "A simple, configurable static web server made with NodeJS",
+  "main": "serve",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/abejfehr/tiny-node.js-webserver.git"
+  },
+  "author": "Abe Fehr",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/abejfehr/tiny-node.js-webserver/issues"
+  },
+  "homepage": "https://github.com/abejfehr/tiny-node.js-webserver"
+}

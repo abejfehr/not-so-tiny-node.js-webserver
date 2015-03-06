@@ -2,6 +2,6 @@
   "myproject": {
     "host": "0.0.0.0",
     "port": 5000,
-    "docroot": "/Path/to/project"
+    "docroot": "/users/abe/Dropbox/Projects/Parity/"
   }
 }
